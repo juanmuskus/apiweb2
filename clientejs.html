@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Cliente API en JS</title>
+</head>
+<body>
+  <h1>Artículo</h1>
+  <div id="articulo"></div>
+
+  <script>
+    fetch('http://localhost:8000/articulos/333')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('articulo').innerText = JSON.stringify(data);      
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>
